@@ -19,4 +19,4 @@ This blog is my digital resume - a place to share what I'm learning, building, a
 
 - [GitHub](https://github.com/thewindmom)
 - [Twitter/X](https://twitter.com/thewindmom)
-- [LinkedIn](https://linkedin.com/in/thewindmom)
+- [LinkedIn](https://linkedin.com/in/thewind-mom)
