@@ -1,5 +1,5 @@
-baseURL: "https://thewimo.github.io/"
-title: "thewimo"
+baseURL: "https://thewindmom.github.io/"
+title: "thewind"
 theme: PaperMod
 
 pagination:
@@ -16,7 +16,7 @@ minify:
 
 params:
   env: production
-  title: "thewimo"
+  title: "thewind"
   description: "Building in public. Writing about AI, engineering, and the journey."
   keywords: [Blog, AI, Machine Learning, Engineering, Tech]
   author: "Thewind Mom"
@@ -60,7 +60,7 @@ params:
   # Social icons
   socialIcons:
     - name: github
-      url: "https://github.com/thewimo"
+      url: "https://github.com/thewindmom"
     - name: twitter
       url: "https://twitter.com/thewindmom"
     - name: linkedin
