@@ -6,32 +6,25 @@ tags: ["imperator", "ui", "agents", "vibeproxy", "droid", "claude", "codex", "ge
 description: "A minimal terminal UI for Imperator, plus my latest experiments with Vibeproxy, Droid, and model access."
 ---
 
-I spent most of today back in the Imperator codebase, and I made a decision: the UI is going full terminal.
-
-I wasn't trying to create a new format from scratch. I just wanted to polish what was there. But as I cleaned it up, the terminal-first approach just clicked.
-
-## The UI Is Changing
-
-The new direction is minimal, fast, and focused.
+I spent most of my free time in the last two days back in the Imperator codebase and polishing the UI. The new direction is minimal, fast, and focused.
 
 - The terminal is the hero
 - Commands become UI buttons
 - The activity feed goes away
 - Beads live on the right
 
-It feels significantly more polished now. Less noise, more signal.
+It feels significantly more polished now. Less noise, more signal. But there will probably be more changes in the future.
 
 ![Imperator Frontend](/images/260105_imperator_2.jpeg)
 
 ## The Subscription Maze
 
-I hit my Opus weekly limit again. So I'm back to Codex for now, but frankly, it's not enough for what I'm trying to do.
-
-Managing these model subscriptions is becoming a full-time job. To keep track of all the usage ceilings without losing my mind, I started using **CodexBar**.
+I hit my Opus weekly limit again. So I'm back to Codex for now, but frankly, it's not enough for what I'm trying to do. As unfortunately Codex is kind of slow.
+To keep track of all the usage ceilings without losing my mind, I started using **CodexBar**.
 
 ![CodexBar Usage Tracking](/images/260105_CodexBar.png)
 
-I also finally caved and started the **Google AI** plan today after seeing that Opus 4.5 can be routed through Antigravity.
+I also finally caved and started the **Google AI** plan today after seeing that Opus 4.5 can be routed through Antigravity especially after seeing that it can be used with **Amp Code** and **Droid**. And since it is free for the first month, why not?
 Here's how I'm splitting my subscriptions right now to maximize throughput:
 
 - **Antigravity** for a bit more Opus usage (plus the first month was free).
@@ -42,15 +35,15 @@ Here's how I'm splitting my subscriptions right now to maximize throughput:
 
 ## Droid, Vibeproxy, and Reality
 
-I really wanted to get **Droid** (by Factory.ai) working with **Vibeproxy**. The dream was to use my existing Codex and Claude Code subscriptions inside Droid without paying double.
+I really wanted to get **Droid** (by Factory.ai) working with **Vibeproxy**. The dream was to use my existing Codex and Claude Code subscriptions plus now Antigravity inside Droid without paying double.
 
-It wasn't easy. At first, I could only access Gemini Pro models, and getting Codex and Claude models to work required understanding the configuration codebase, reading through some issues, changing, testing the code, and [submitting a pull request](https://github.com/automazeio/vibeproxy/pull/145) to get it merged. But it was easy enough to get it working with Gemini 3 Pro.
+It wasn't easy. At first, I could only access Gemini Pro models, and the Codex fix was still there open as pull request.
 
 ![Vibeproxy Settings](/images/260105_VibeProxy.png)
 
 But since I knew Opus could be used via Antigravity, I decided to go down the rabbit hole.
 
-I dug into the Vibeproxy repo, added the Anthropic extended-thinking beta header, and forked it. I updated the code, built the Swift app, and ran it locally. It took multiple attempts and a lot of trial and error, but eventually, I got it: Vibeproxy finally talking to Droid.
+I dug into the Vibeproxy repo, read some issues for possible solutions, added the Anthropic extended-thinking beta header, and forked it. I updated the code, built the Swift app, and ran it locally. It took multiple attempts, [a pull request](https://github.com/automazeio/vibeproxy/pull/145) with multiple commits and a lot of trial and error (as somehow the configuration of Droid is buggy. To load the custom models I needed to uninstall and reinstall Droid multiple times. Or maybe I am just unlucky/dumb) but eventually, I got it: Vibeproxy finally talking to Droid with Codex and Claude models.
 
 It works, but it's not perfect. Droid is still a bit bugged for me. Gemini 3 Pro is unreliable, but the Codex and Claude models seem stable, so I'm sticking to those for now. However the Opus limit on Antigravity is really small, but atleast i can use it like 1-2 hours every 5 hours and there does not seem to be a weekly limit.
 
