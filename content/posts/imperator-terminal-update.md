@@ -44,7 +44,7 @@ Here's how I'm splitting my subscriptions right now to maximize throughput:
 
 I really wanted to get **Droid** (by Factory.ai) working with **Vibeproxy**. The dream was to use my existing Codex and Claude Code subscriptions inside Droid without paying double.
 
-It wasn't easy. At first, I could only access Gemini Pro models, and getting Codex to work required understanding the configuration codebase, reading through some issues, and submitting a pull request. But it was easy enough to get it working with Gemini 3 Pro.
+It wasn't easy. At first, I could only access Gemini Pro models, and getting Codex to work required understanding the configuration codebase, reading through some issues, and [submitting a pull request](https://github.com/automazeio/vibeproxy/pull/145). But it was easy enough to get it working with Gemini 3 Pro.
 
 ![Vibeproxy Settings](/images/250105_VibeProxy.png)
 
