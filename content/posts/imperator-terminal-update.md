@@ -62,7 +62,7 @@ I also saw that Vibeproxy supports **Amp Code**, which is next on my list. I kee
 
 I saw this tweet today and it immediately sparked an idea for Gas Town:
 
-https://x.com/joshpuckett/status/2007926313726939452
+[![Gas Town 3D Concept](/images/260105_X_post.png)](https://x.com/joshpuckett/status/2007926313726939452)
 
 Maybe **Three.js + Gas Town** could get me there? A spatial view of my agents working? That's a problem for another day.
 
