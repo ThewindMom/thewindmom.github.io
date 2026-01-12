@@ -42,6 +42,12 @@ When it's time to ship real work, **Conductor** is my tool. The intuitive git wo
 - **Clawdbot** (remote management via phone)
 - **Conductor** (serious shipping & production work)
 
+### Why Not Droid (Yet)
+
+**Droid** has a genuine game-changer: the headless exec function. It's not useful to me *right now* because I'm not leveraging that capability. But I'm aware of its potential:
+
+Imagine integrating Droid into a code review stack (like CodeRabbit) or CI/CD pipeline. The headless exec function could spin up subagents to automatically solve issues, execute LLM-controlled functions, or tackle entire problems with a single command. That's powerful. When I need that pattern, Droid becomes relevant. For now, it's on my radar but not in my active stack.
+
 ## A Note on Long-Running Tasks: The Ralph Wiggum Loop
 
 There's buzz around the **Ralph Wiggum Loop**, but I'm skeptical. Here's the reality: it loops continuously while context gets progressively worse. The compression isn't effective—it's just summarized context that degrades the longer the task runs.
