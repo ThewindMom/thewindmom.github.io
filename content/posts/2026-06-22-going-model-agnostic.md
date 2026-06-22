@@ -40,7 +40,7 @@ I'm not going to pretend this was a clean progression. It was a mess. Here's the
  For the interface layer (the thing I actually stare at), I bounced through **emdash**, **cmux**, **Superset**, **Supacode**, and **Kaku**. They're all trying to solve the same problem: how do you manage multiple agent sessions without losing your mind? They're all decent. None of them stuck, except perhaps Kaku, a terminal by Tw93: Tw93 always delivers aesthetic projects with clean features and that Asian minimalism I love.
 
 <div style="text-align: center; margin: 2em 0;">
-<img src="/images/260622_tibo_reset.png" alt="Saint Tibo: Giver of Tokens, Resetter of Limits" style="max-width: 400px; height: auto; border-radius: 8px;" />
+<img src="/images/260622_tibo_reset.png" alt="Saint Tibo: Giver of Tokens, Resetter of Limits" style="display: block; margin: 0 auto; max-width: 400px; height: auto; border-radius: 8px;" />
 <p style="font-size: 0.9em; color: #888; margin-top: 0.5em;">Saint Tibo, patron saint of Codex rate limits. <a href="https://x.com/sama/status/2056804900017947046">If this tweet gets 1 like, Tibo will reset Codex rate limits.</a></p>
 </div>
 
