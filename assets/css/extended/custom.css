@@ -788,6 +788,7 @@ pre:hover .copy-code {
 .reading-source-card .reading-author {
     font-family: 'Geist Mono', monospace;
     font-size: 12px;
+    line-height: 1;
     color: #5a5a5a;
 }
 .reading-type {
