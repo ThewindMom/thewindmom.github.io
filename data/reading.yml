@@ -1,31 +1,55 @@
-list:
-  - quote: "The desire to create is one of the deepest yearnings of the human soul."
-    source: The Creative Act
+sources:
+  - title: The Creative Act
     author: Rick Rubin
-    page: "p. 48"
-    date: Jun 2026
-  - quote: "You can't steer a parked car."
-    source: Atomic Habits
+    type: book
+    notes:
+      - quote: "The desire to create is one of the deepest yearnings of the human soul."
+        loc: "p. 48"
+        date: Jun 2026
+      - quote: "The greatest weapon against stress is our ability to choose one thought over another."
+        loc: "p. 203"
+        date: Apr 2026
+
+  - title: Atomic Habits
     author: James Clear
-    page: "p. 91"
-    date: May 2026
-  - quote: "Clarity is the answer to power."
-    source: Clear Thinking
+    type: book
+    notes:
+      - quote: "You can't steer a parked car."
+        loc: "p. 91"
+        date: May 2026
+      - quote: "The quality of your life is determined by the quality of your habits."
+        loc: "p. 35"
+        date: May 2026
+      - quote: "You do not rise to the level of your goals. You fall to the level of your systems."
+        loc: "p. 27"
+        date: May 2026
+
+  - title: Clear Thinking
     author: Shane Parrish
-    page: "p. 112"
-    date: May 2026
-  - quote: "The quality of your life is determined by the quality of your habits."
-    source: Atomic Habits
-    author: James Clear
-    page: "p. 35"
-    date: May 2026
-  - quote: "You do not rise to the level of your goals. You fall to the level of your systems."
-    source: Atomic Habits
-    author: James Clear
-    page: "p. 27"
-    date: May 2026
-  - quote: "The greatest weapon against stress is our ability to choose one thought over another."
-    source: The Creative Act
-    author: Rick Rubin
-    page: "p. 203"
-    date: Apr 2026
+    type: book
+    notes:
+      - quote: "Clarity is the answer to power."
+        loc: "p. 112"
+        date: May 2026
+
+  - title: How to Get Rich (without getting lucky)
+    author: "@naval"
+    type: thread
+    notes:
+      - quote: "Seek wealth, not money or status. Wealth is having assets that earn while you sleep."
+        loc: "tweet 12"
+        date: Jun 2026
+      - quote: "You're not going to get rich renting out your time. You must own equity — a piece of the business."
+        loc: "tweet 37"
+        date: Jun 2026
+
+  - title: Steve Jobs' 2005 Stanford Commencement
+    author: Steve Jobs
+    type: video
+    notes:
+      - quote: "You can't connect the dots looking forward; you can only connect them looking backwards."
+        loc: "4:58"
+        date: Jun 2026
+      - quote: "Stay hungry. Stay foolish."
+        loc: "13:45"
+        date: Jun 2026

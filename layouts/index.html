@@ -56,29 +56,17 @@
         </section>
 
         <section class="home-reading">
-            <h3 class="section-label">Reading Notes</h3>
+            <h3 class="section-label">Reading</h3>
             <div class="reading-list">
+                {{- range first 3 site.Data.reading.sources }}
                 <div class="reading-entry">
                     <span class="reading-bullet" aria-hidden="true"></span>
                     <div class="reading-content">
-                        <p class="reading-quote">"The desire to create is one of the deepest yearnings of the human soul."</p>
-                        <p class="reading-cite">— The Creative Act <span class="reading-page">p. 48</span></p>
+                        <p class="reading-quote">"{{ (index .notes 0).quote }}"</p>
+                        <p class="reading-cite">— {{ .title }}{{ with .author }} · {{ . }}{{ end }}</p>
                     </div>
                 </div>
-                <div class="reading-entry">
-                    <span class="reading-bullet" aria-hidden="true"></span>
-                    <div class="reading-content">
-                        <p class="reading-quote">"You can't steer a parked car."</p>
-                        <p class="reading-cite">— Atomic Habits <span class="reading-page">p. 91</span></p>
-                    </div>
-                </div>
-                <div class="reading-entry">
-                    <span class="reading-bullet" aria-hidden="true"></span>
-                    <div class="reading-content">
-                        <p class="reading-quote">"Clarity is the answer to power."</p>
-                        <p class="reading-cite">— Clear Thinking <span class="reading-page">p. 112</span></p>
-                    </div>
-                </div>
+                {{- end }}
             </div>
             <a href="{{ "reading/" | relURL }}" class="view-all">More reading notes →</a>
         </section>

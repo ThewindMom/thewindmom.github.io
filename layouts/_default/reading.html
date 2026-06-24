@@ -1,15 +1,28 @@
 {{ define "main" }}
 <div class="home-content">
     <div class="reading-section">
-        <h3 class="section-label">Reading Notes <span class="posts-count-inline">{{ len site.Data.reading.list }}</span></h3>
-        <p class="reading-intro">Passages that changed how I think, from books worth carrying.</p>
-        <div class="reading-full-list">
-            {{ range site.Data.reading.list }}
-            <div class="reading-card">
-                <span class="reading-bullet" aria-hidden="true"></span>
-                <div class="reading-content">
-                    <p class="reading-quote">"{{ .quote }}"</p>
-                    <p class="reading-cite">— {{ .source }} by {{ .author }} <span class="reading-page">{{ .page }}</span></p>
+        <h3 class="section-label">Reading Notes <span class="posts-count-inline">{{ len site.Data.reading.sources }}</span></h3>
+        <p class="reading-intro">Passages that changed how I think — from books, threads, and videos worth carrying.</p>
+        <div class="reading-source-list">
+            {{ range site.Data.reading.sources }}
+            <div class="reading-source-card">
+                <div class="reading-source-header">
+                    <span class="reading-type reading-type-{{ .type }}">{{ .type }}</span>
+                    <h4 class="reading-source-title">{{ .title }}</h4>
+                    {{ with .author }}<span class="reading-author">{{ . }}</span>{{ end }}
+                </div>
+                <div class="reading-source-notes">
+                    {{ range .notes }}
+                    <div class="reading-note">
+                        <span class="reading-note-bullet" aria-hidden="true"></span>
+                        <div class="reading-note-content">
+                            <p class="reading-note-quote">"{{ .quote }}"</p>
+                            <p class="reading-note-meta">
+                                {{ with .loc }}<span class="reading-note-loc">{{ . }}</span> · {{ end }}<span class="reading-note-date">{{ .date }}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {{ end }}
                 </div>
             </div>
             {{ end }}
