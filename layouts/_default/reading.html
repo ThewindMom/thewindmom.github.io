@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="home-content">
+    <div class="reading-section">
+        <h3 class="section-label">Reading Notes <span class="posts-count-inline">{{ len site.Data.reading.list }}</span></h3>
+        <p class="reading-intro">Passages that changed how I think, from books worth carrying.</p>
+        <div class="reading-full-list">
+            {{ range site.Data.reading.list }}
+            <div class="reading-card">
+                <span class="reading-bullet" aria-hidden="true"></span>
+                <div class="reading-content">
+                    <p class="reading-quote">"{{ .quote }}"</p>
+                    <p class="reading-cite">— {{ .source }} by {{ .author }} <span class="reading-page">{{ .page }}</span></p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

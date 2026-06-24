@@ -6,12 +6,13 @@
 </button>
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 <aside class="home-sidebar" id="home-sidebar">
-    <a href="{{ "" | absLangURL }}" class="sidebar-brand" id="sidebar-brand"><span class="poetry">- thewind</span></a>
+    <a href="{{ "" | absLangURL }}" class="sidebar-brand" id="sidebar-brand"><span class="poetry">thewinds blog</span></a>
 
     <nav class="sidebar-nav">
         <a href="{{ "" | absLangURL }}" class="nav-item{{ if .IsHome }} active{{ end }}">home</a>
         <a href="{{ "posts/" | relURL }}" class="nav-item{{ if (eq .Section "posts") }} active{{ end }}">posts</a>
         <a href="{{ "projects/" | relURL }}" class="nav-item{{ if (eq .RelPermalink "/projects/") }} active{{ end }}">projects</a>
+        <a href="{{ "reading/" | relURL }}" class="nav-item{{ if (eq .RelPermalink "/reading/") }} active{{ end }}">reading</a>
     </nav>
 
     <div class="sidebar-divider"></div>
@@ -19,15 +20,15 @@
     <div class="sidebar-status">
         <div class="status-item">
             <svg class="status-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>darmstadt, de</span>
+            <span class="poetry">darmstadt, de</span>
         </div>
         <div class="status-item">
             <svg class="status-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span id="sidebar-time">--:--</span>
+            <span id="sidebar-time" class="poetry">--:--</span>
         </div>
         <div class="status-item">
             <svg class="status-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19a4.5 4.5 0 1 0-4.5-4.5h0a4.5 4.5 0 0 0-9 0h0a4.5 4.5 0 0 0 4.5 4.5h9z"/></svg>
-            <span>overcast, 14°C</span>
+            <span id="sidebar-weather">—</span>
         </div>
     </div>
 
@@ -48,7 +49,7 @@
 
     <div class="sidebar-footer">
         <p class="sidebar-copyright">© {{ now.Format "2006" }} thewind</p>
-        <span class="poetry sidebar-tagline-poetry">thoughts on building,<br>learning, and living<br>with intention.</span>
+        <span class="sidebar-tagline">thoughts on building,<br>learning, and living<br>with intention.</span>
     </div>
 </aside>
 <script>
@@ -67,6 +68,32 @@
     }
     updateTime();
     setInterval(updateTime, 30000);
+
+    // Weather fetch — Open-Meteo (free, no API key required)
+    var weatherCodes = {
+        0: 'clear', 1: 'mainly clear', 2: 'partly cloudy', 3: 'overcast',
+        45: 'foggy', 48: 'foggy', 51: 'light drizzle', 53: 'drizzle',
+        55: 'dense drizzle', 56: 'freezing drizzle', 57: 'freezing drizzle',
+        61: 'light rain', 63: 'rain', 65: 'heavy rain', 66: 'freezing rain',
+        67: 'freezing rain', 71: 'light snow', 73: 'snow', 75: 'heavy snow',
+        77: 'snow grains', 80: 'light showers', 81: 'showers', 82: 'violent showers',
+        85: 'snow showers', 86: 'snow showers', 95: 'thunderstorm',
+        96: 'thunderstorm w/ hail', 99: 'thunderstorm w/ hail'
+    };
+    function updateWeather() {
+        var el = document.getElementById('sidebar-weather');
+        if (!el) return;
+        fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8728&longitude=8.6512&current=temperature_2m,weather_code&timezone=Europe/Berlin')
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                var code = weatherCodes[d.current.weather_code] || '—';
+                var temp = Math.round(d.current.temperature_2m);
+                el.textContent = code + ', ' + temp + '°C';
+            })
+            .catch(function() { el.textContent = '—'; });
+    }
+    updateWeather();
+    setInterval(updateWeather, 600000);
 
     // Burger menu toggle
     var toggle = document.getElementById('sidebar-toggle');

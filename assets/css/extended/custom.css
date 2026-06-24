@@ -745,3 +745,57 @@ pre:hover .copy-code {
         gap: 4px;
     }
 }
+
+/* ===== Reading page (reading.html) ===== */
+.reading-section {
+    margin-bottom: 48px;
+}
+.reading-intro {
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0 0 32px;
+}
+.reading-full-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.reading-card {
+    display: flex;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+.reading-card:hover .reading-bullet {
+    background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
+    border-color: var(--accent);
+}
+.reading-card:hover .reading-quote { color: #e8e8e8; }
+.reading-card .reading-bullet {
+    width: 8px;
+    height: 8px;
+    background-image: radial-gradient(circle, #8a8a8a 1px, transparent 1px);
+    background-size: 3px 3px;
+    flex-shrink: 0;
+    margin-top: 6px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+.reading-card .reading-quote {
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    color: #c0c0c0;
+    line-height: 1.5;
+    margin: 0 0 4px;
+    transition: color 0.2s ease;
+}
+.reading-card .reading-cite {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: #8a8a8a;
+    margin: 0;
+}
+.reading-card .reading-page {
+    color: #404040;
+}

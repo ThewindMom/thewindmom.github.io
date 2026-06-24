@@ -27,7 +27,8 @@
 .project-entry,
 .project-card,
 .projects-intro,
-.reading-entry,
+.reading-card,
+.reading-intro,
 .view-all,
 .home-footer {
     animation: fadeInUp 0.5s ease both;
@@ -60,6 +61,14 @@
 .project-card:nth-child(7) { animation-delay: 0.44s; }
 .project-card:nth-child(8) { animation-delay: 0.50s; }
 .project-card:nth-child(n+9) { animation-delay: 0.56s; }
+.reading-intro          { animation-delay: 0s; }
+.reading-card:nth-child(1) { animation-delay: 0.08s; }
+.reading-card:nth-child(2) { animation-delay: 0.14s; }
+.reading-card:nth-child(3) { animation-delay: 0.20s; }
+.reading-card:nth-child(4) { animation-delay: 0.26s; }
+.reading-card:nth-child(5) { animation-delay: 0.32s; }
+.reading-card:nth-child(6) { animation-delay: 0.38s; }
+.reading-card:nth-child(n+7) { animation-delay: 0.44s; }
 
 /* ===== Grain Texture Overlay ===== */
 .home-layout::after {
@@ -220,10 +229,20 @@
     color: #e8e8e8;
     margin-bottom: 8px;
 }
-.sidebar-tagline-poetry {
-    font-size: 0.95em;
+.sidebar-tagline {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
     color: #8a8a8a;
     line-height: 1.6;
+    margin: 0;
+}
+
+/* Poetry font in sidebar status items (location, time) — override .poetry block/1.2em */
+.status-item .poetry {
+    display: inline;
+    font-size: 14px;
+    color: #c0c0c0;
+    white-space: normal;
     margin: 0;
     padding: 0;
     border: none;
@@ -674,11 +693,6 @@ body.menu-open {
     }
 }
 
-@media (max-width: 380px) {
-    .particle-hero { height: 35vh; min-height: 240px; }
-    .featured-title { font-size: 20px; }
-}
-
 @media (prefers-reduced-motion: reduce) {
     .section-label,
     .featured-title,
@@ -689,6 +703,8 @@ body.menu-open {
     .project-card,
     .projects-intro,
     .reading-entry,
+    .reading-card,
+    .reading-intro,
     .view-all,
     .home-footer {
         animation: none;
