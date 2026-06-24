@@ -23,13 +23,13 @@ REPOS_JSON=$(curl -sf "${AUTH_HEADER[@]}" \
         url: .html_url,
         language: (.language // "—"),
         stars: .stargazers_count,
-        date: (.pushed_at | .[0:7])
-    }] | sort_by(.date) | reverse'
+        date: (.pushed_at | .[0:7]),
+        pushed_at: .pushed_at
+    }] | sort_by(.pushed_at) | reverse'
 )
 
 # Write YAML
 {
-    echo "list:"
     echo "$REPOS_JSON" | jq -r '.[] | "  - name: \"" + .name + "\"\n    description: \"" + (.description | gsub("\""; "\\\"")) + "\"\n    url: " + .url + "\n    language: " + .language + "\n    stars: " + (.stars | tostring) + "\n    date: " + .date'
 } > "$OUT"
 

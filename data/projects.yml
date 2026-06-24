@@ -1,10 +1,3 @@
-list:
-  - name: "pi-amp-session-flow"
-    description: "Amp-style handoff and session-query flow for Pi."
-    url: https://github.com/ThewindMom/pi-amp-session-flow
-    language: TypeScript
-    stars: 0
-    date: 2026-06
   - name: "factory-desktop-linux"
     description: "Unofficial Linux port builder for Factory Droid Desktop, assembling Debian and AppImage packages from official macOS DMGs with safe source-only defaults."
     url: https://github.com/ThewindMom/factory-desktop-linux
@@ -17,23 +10,29 @@ list:
     language: JavaScript
     stars: 1
     date: 2026-06
+  - name: "pi-amp-session-flow"
+    description: "Amp-style handoff and session-query flow for Pi."
+    url: https://github.com/ThewindMom/pi-amp-session-flow
+    language: TypeScript
+    stars: 0
+    date: 2026-06
   - name: "amp-rtk"
     description: "Token-efficient shell command rewriting for Amp via RTK"
     url: https://github.com/ThewindMom/amp-rtk
     language: TypeScript
     stars: 0
     date: 2026-06
-  - name: "pi-doom-loop-detector"
-    description: "Detects doom loops in LLM outputs and enables recovery injection for Pi coding agent"
-    url: https://github.com/ThewindMom/pi-doom-loop-detector
-    language: TypeScript
-    stars: 2
-    date: 2026-05
   - name: "grok-byok-custom-models"
     description: "Documented BYOK bridge for running Grok CLI with custom OpenAI-compatible models through a local proxy."
     url: https://github.com/ThewindMom/grok-byok-custom-models
     language: Python
     stars: 0
+    date: 2026-05
+  - name: "pi-doom-loop-detector"
+    description: "Detects doom loops in LLM outputs and enables recovery injection for Pi coding agent"
+    url: https://github.com/ThewindMom/pi-doom-loop-detector
+    language: TypeScript
+    stars: 2
     date: 2026-05
   - name: "continuous-claude-pi"
     description: "Pi-native port of ContinuousClaude v4.7 with TLDR, Ouros, FastEdit, bloks, handoffs, and autonomous workflows."
