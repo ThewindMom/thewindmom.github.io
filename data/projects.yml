@@ -1,3 +1,4 @@
+list:
   - name: "factory-desktop-linux"
     description: "Unofficial Linux port builder for Factory Droid Desktop, assembling Debian and AppImage packages from official macOS DMGs with safe source-only defaults."
     url: https://github.com/ThewindMom/factory-desktop-linux

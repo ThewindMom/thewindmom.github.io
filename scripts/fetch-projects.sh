@@ -30,6 +30,7 @@ REPOS_JSON=$(curl -sf "${AUTH_HEADER[@]}" \
 
 # Write YAML
 {
+    echo "list:"
     echo "$REPOS_JSON" | jq -r '.[] | "  - name: \"" + .name + "\"\n    description: \"" + (.description | gsub("\""; "\\\"")) + "\"\n    url: " + .url + "\n    language: " + .language + "\n    stars: " + (.stars | tostring) + "\n    date: " + .date'
 } > "$OUT"
 
