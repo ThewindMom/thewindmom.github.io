@@ -296,15 +296,6 @@
     line-height: 1;
     opacity: 0;
 }
-.particle-hero__subtitle {
-    font-family: 'Geist Pixel', 'Geist Mono', monospace;
-    font-size: 14px;
-    font-weight: 400;
-    color: rgba(232, 232, 232, 0.5);
-    margin-top: 1rem;
-    margin-bottom: 0;
-    letter-spacing: 0;
-}
 
 @media (prefers-reduced-motion: reduce) {
     .particle-hero__title {
