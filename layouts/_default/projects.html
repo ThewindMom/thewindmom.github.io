@@ -5,7 +5,14 @@
         <p class="projects-intro">Open-source experiments, tools, and the occasional useful thing.</p>
         <div class="projects-list">
             {{ range site.Data.projects.list }}
-            <a href="{{ .url }}" class="project-card" target="_blank" rel="noopener">
+            <a href="{{ .url }}" class="project-card" target="_blank" rel="noopener"
+               data-aa-track="cta"
+               data-aa-button-id="projects_page_{{ .name | urlize }}"
+               data-aa-label="{{ .name }}"
+               data-aa-location="projects_page"
+               data-aa-intent-type="browse"
+               data-aa-intent-level="low"
+               data-aa-destination-type="external_link">
                 <div class="project-card-main">
                     <span class="project-card-name">{{ .name }}</span>
                     <span class="project-card-desc">{{ .description }}</span>

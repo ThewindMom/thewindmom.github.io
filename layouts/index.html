@@ -4,18 +4,34 @@
 <div class="home-content">
     {{- /* Featured + Recent Essays + Projects + Reading Notes in one row */ -}}
     <div class="home-row home-row-four">
-        <section class="home-featured">
+        <section class="home-featured" data-aa-section="featured">
             <h3 class="section-label">Featured</h3>
             {{- with index (where site.RegularPages "Type" "posts") 0 }}
-            <a href="{{ .Permalink }}" class="featured-link">
+            <a href="{{ .Permalink }}" class="featured-link"
+               data-aa-track="cta"
+               data-aa-button-id="home_featured_essay"
+               data-aa-label="{{ .Title }}"
+               data-aa-location="home_featured"
+               data-aa-section="featured"
+               data-aa-intent-type="navigate"
+               data-aa-intent-level="low"
+               data-aa-destination-type="internal_link">
                 <h2 class="featured-title">{{ .Title }}</h2>
             </a>
             <p class="featured-summary">{{ .Description | default .Summary | truncate 120 }}</p>
-            <a href="{{ .Permalink }}" class="read-more">Read the essay →</a>
+            <a href="{{ .Permalink }}" class="read-more"
+               data-aa-track="cta"
+               data-aa-button-id="home_featured_read_more"
+               data-aa-label="Read the essay"
+               data-aa-location="home_featured"
+               data-aa-section="featured"
+               data-aa-intent-type="navigate"
+               data-aa-intent-level="low"
+               data-aa-destination-type="internal_link">Read the essay →</a>
             {{- end }}
         </section>
 
-        <section class="home-recent">
+        <section class="home-recent" data-aa-section="recent_essays">
             <h3 class="section-label">Recent Essays</h3>
             <div class="essay-list">
                 {{- range first 5 (after 1 (where site.RegularPages "Type" "posts")) }}
@@ -27,11 +43,19 @@
             </div>
         </section>
 
-        <section class="home-projects">
+        <section class="home-projects" data-aa-section="projects">
             <h3 class="section-label">Projects</h3>
             <div class="project-list">
                 {{- range first 3 site.Data.projects.list }}
-                <a href="{{ .url }}" class="project-entry" target="_blank" rel="noopener">
+                <a href="{{ .url }}" class="project-entry" target="_blank" rel="noopener"
+                   data-aa-track="cta"
+                   data-aa-button-id="home_project_{{ .name | urlize }}"
+                   data-aa-label="{{ .name }}"
+                   data-aa-location="home_projects"
+                   data-aa-section="projects"
+                   data-aa-intent-type="browse"
+                   data-aa-intent-level="low"
+                   data-aa-destination-type="external_link">
                     <div class="project-info">
                         <span class="project-name">{{ .name }}</span>
                         <span class="project-desc">{{ .description }}</span>
@@ -40,10 +64,18 @@
                 </a>
                 {{- end }}
             </div>
-            <a href="{{ "projects/" | relURL }}" class="view-all">View all projects →</a>
+            <a href="{{ "projects/" | relURL }}" class="view-all"
+               data-aa-track="cta"
+               data-aa-button-id="home_view_all_projects"
+               data-aa-label="View all projects"
+               data-aa-location="home_projects"
+               data-aa-section="projects"
+               data-aa-intent-type="navigate"
+               data-aa-intent-level="low"
+               data-aa-destination-type="internal_link">View all projects →</a>
         </section>
 
-        <section class="home-reading">
+        <section class="home-reading" data-aa-section="reading">
             <h3 class="section-label">Reading</h3>
             <div class="reading-list">
                 {{- range first 3 site.Data.reading.sources }}
@@ -56,7 +88,15 @@
                 </div>
                 {{- end }}
             </div>
-            <a href="{{ "reading/" | relURL }}" class="view-all">More reading notes →</a>
+            <a href="{{ "reading/" | relURL }}" class="view-all"
+               data-aa-track="cta"
+               data-aa-button-id="home_view_all_reading"
+               data-aa-label="More reading notes"
+               data-aa-location="home_reading"
+               data-aa-section="reading"
+               data-aa-intent-type="navigate"
+               data-aa-intent-level="low"
+               data-aa-destination-type="internal_link">More reading notes →</a>
         </section>
     </div>
 </div>

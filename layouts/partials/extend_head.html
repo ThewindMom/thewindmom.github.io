@@ -1,2 +1,13 @@
 <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | absURL }}">
 <link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | absURL }}" color="#d4a574">
+{{- with site.Params.atarashi }}
+<script
+  defer
+  src="{{ .trackerSrc }}"
+  data-aa-key="{{ .key }}"
+  data-aa-endpoint="{{ .endpoint }}"
+  data-aa-consent-mode="none"
+  data-aa-tracking-mode="{{ if hugo.IsProduction }}production{{ else }}debug{{ end }}"
+  {{ if not hugo.IsProduction }}data-aa-debug="true"{{ end }}
+></script>
+{{- end }}

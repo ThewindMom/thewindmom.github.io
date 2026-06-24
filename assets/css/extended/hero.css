@@ -597,7 +597,6 @@
 /* Lock body scroll when mobile menu is open */
 body.menu-open {
     overscroll-behavior: none;
-    touch-action: none;
 }
 
 /* ===== Responsive ===== */

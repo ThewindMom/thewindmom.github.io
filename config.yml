@@ -44,6 +44,11 @@ params:
     disableHLJS: true
     theme_color: "#0B0B0B"
     msapplication_TileColor: "#0B0B0B"
+
+  atarashi:
+    key: "aa_-u18hjpivH5Yy-cn_9yTmUffKgZuSi3D"
+    endpoint: "https://analytics.atarashi.ai/api/events"
+    trackerSrc: "https://analytics.atarashi.ai/tracker/atarashi-analytics.js"
 markup:
   goldmark:
     renderer:
