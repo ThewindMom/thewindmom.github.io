@@ -42,6 +42,8 @@ params:
 
   assets:
     disableHLJS: true
+    theme_color: "#0B0B0B"
+    msapplication_TileColor: "#0B0B0B"
 markup:
   goldmark:
     renderer:
