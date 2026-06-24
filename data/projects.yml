@@ -1,0 +1,61 @@
+list:
+  - name: factory-desktop-linux
+    description: Unofficial Linux port builder for Factory Droid Desktop — Debian and AppImage packages from macOS source.
+    url: https://github.com/ThewindMom/factory-desktop-linux
+    language: TypeScript
+    stars: 0
+    date: Jun 2026
+  - name: pi-amp-session-flow
+    description: Amp-style handoff and session-query flow for AI coding agents.
+    url: https://github.com/ThewindMom/pi-amp-session-flow
+    language: TypeScript
+    stars: 0
+    date: Jun 2026
+  - name: amp-rtk
+    description: Token-efficient shell command rewriting for AI agents via RTK.
+    url: https://github.com/ThewindMom/amp-rtk
+    language: TypeScript
+    stars: 0
+    date: Jun 2026
+  - name: 151-trading-strategies
+    description: Sixty-eight quantitative trading strategies, distilled into a clean FastAPI.
+    url: https://github.com/ThewindMom/151-trading-strategies
+    language: Python
+    stars: 9
+    date: May 2026
+  - name: grok-byok-custom-models
+    description: Run Grok with custom OpenAI-compatible models through a local proxy.
+    url: https://github.com/ThewindMom/grok-byok-custom-models
+    language: Python
+    stars: 0
+    date: May 2026
+  - name: pi-doom-loop-detector
+    description: Detects doom loops in AI agent outputs and enables recovery injection.
+    url: https://github.com/ThewindMom/pi-doom-loop-detector
+    language: TypeScript
+    stars: 2
+    date: May 2026
+  - name: compound-engineering-pi
+    description: Compound engineering patterns for AI agents with model-aware subagents.
+    url: https://github.com/ThewindMom/compound-engineering-pi
+    language: JavaScript
+    stars: 1
+    date: May 2026
+  - name: continuous-claude-pi
+    description: Continuous context management — handoffs, ledgers, and autonomous workflows.
+    url: https://github.com/ThewindMom/continuous-claude-pi
+    language: TypeScript
+    stars: 0
+    date: Apr 2026
+  - name: claude-code-oauth-gateway
+    description: OAuth gateway for Claude Code authentication.
+    url: https://github.com/ThewindMom/claude-code-oauth-gateway
+    language: Shell
+    stars: 0
+    date: Jan 2026
+  - name: tradingagents
+    description: Multi-agent trading system with LLM provider integration.
+    url: https://github.com/ThewindMom/tradingagents
+    language: Python
+    stars: 0
+    date: Jan 2026

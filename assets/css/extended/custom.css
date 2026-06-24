@@ -440,30 +440,71 @@ body {
 }
 .paginav {
     display: flex;
-    justify-content: stretch;
-    gap: 16px;
+    gap: 24px;
+    background: none;
+    border: none;
+    border-radius: 0;
+    line-height: normal;
 }
 .paginav a {
     flex: 1;
+    width: auto;
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 18px 20px;
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid #1a1a1a;
-    border-radius: 6px;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    margin-inline-start: 0;
+    border: none;
+    border-bottom: 1px solid #1a1a1a;
+    border-radius: 0;
+    background: none;
+    line-height: normal;
     text-decoration: none;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: all 0.2s ease;
+}
+.paginav .next {
+    justify-content: flex-end;
+    margin-inline-start: 0;
 }
 .paginav a:hover {
-    border-color: var(--accent-border);
     background: var(--accent-soft);
+    border-bottom-color: var(--accent-border);
+}
+.paginav span:hover:not(.title) {
+    box-shadow: none;
 }
 .paginav a:hover .text {
-    color: #e8e8e8;
+    color: #ffffff;
 }
 .paginav a:hover .title {
     color: var(--accent);
+}
+.paginav a:hover .paginav-arrow {
+    color: var(--accent);
+}
+.paginav .prev:hover .paginav-arrow {
+    transform: translateX(-4px);
+}
+.paginav .next:hover .paginav-arrow {
+    transform: translateX(4px);
+}
+.paginav-arrow {
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    color: #5a5a5a;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+.paginav-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+.paginav .next .paginav-info {
+    align-items: flex-end;
 }
 .paginav .title {
     font-family: 'Geist Pixel', 'Geist Mono', monospace;
@@ -474,11 +515,11 @@ body {
     transition: color 0.2s ease;
 }
 .paginav .text {
-    font-family: 'Geist', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: #e8e8e8;
     line-height: 1.4;
-    color: #a0a0a0;
+    overflow-wrap: break-word;
     transition: color 0.2s ease;
 }
 .copy-code {
@@ -532,11 +573,13 @@ pre:hover .copy-code {
     }
     .paginav {
         flex-direction: column;
-        gap: 12px;
+        gap: 0;
     }
     .paginav .next {
-        text-align: left;
-        margin-left: 0;
+        justify-content: flex-start;
+    }
+    .paginav .next .paginav-info {
+        align-items: flex-start;
     }
     .copy-code {
         opacity: 1;
@@ -604,6 +647,99 @@ pre:hover .copy-code {
 @media (max-width: 640px) {
     .posts-section .essay-entry .essay-title { max-width: 100%; }
     .posts-section .essay-entry {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}
+
+/* ===== Projects page (projects.html) ===== */
+.projects-section {
+    margin-bottom: 48px;
+}
+.projects-intro {
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin: 0 0 32px;
+}
+.projects-list {
+    display: flex;
+    flex-direction: column;
+}
+.project-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid #1a1a1a;
+    text-decoration: none;
+    color: inherit;
+    gap: 16px;
+    transition: all 0.2s ease;
+}
+.project-card:first-child { padding-top: 0; }
+.project-card:hover {
+    background: var(--accent-soft);
+    border-bottom-color: var(--accent-border);
+}
+.project-card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+.project-card-name {
+    font-family: 'Geist', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #e8e8e8;
+    transition: color 0.2s ease;
+}
+.project-card:hover .project-card-name { color: #ffffff; }
+.project-card-desc {
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: #a0a0a0;
+    line-height: 1.5;
+}
+.project-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2px;
+}
+.project-card-lang {
+    font-family: 'Geist Pixel Grid', 'Geist Mono', monospace;
+    font-size: 11px;
+    color: #8a8a8a;
+}
+.project-card-stars {
+    font-family: 'Geist Pixel Grid', 'Geist Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+}
+.project-card-date {
+    font-family: 'Geist Pixel Grid', 'Geist Mono', monospace;
+    font-size: 11px;
+    color: #5a5a5a;
+}
+.project-card-arrow {
+    color: #8a8a8a;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    margin-top: 2px;
+}
+.project-card:hover .project-card-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+@media (max-width: 640px) {
+    .project-card {
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;

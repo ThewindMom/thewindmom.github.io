@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="home-content">
+    <div class="projects-section">
+        <h3 class="section-label">All Projects <span class="posts-count-inline">{{ len site.Data.projects.list }}</span></h3>
+        <p class="projects-intro">Open-source experiments, tools, and the occasional useful thing.</p>
+        <div class="projects-list">
+            {{ range site.Data.projects.list }}
+            <a href="{{ .url }}" class="project-card" target="_blank" rel="noopener">
+                <div class="project-card-main">
+                    <span class="project-card-name">{{ .name }}</span>
+                    <span class="project-card-desc">{{ .description }}</span>
+                    <div class="project-card-meta">
+                        {{ with .language }}<span class="project-card-lang">{{ . }}</span>{{ end }}
+                        {{ if gt .stars 0 }}<span class="project-card-stars">★ {{ .stars }}</span>{{ end }}
+                        <span class="project-card-date">{{ .date }}</span>
+                    </div>
+                </div>
+                <span class="project-card-arrow">→</span>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

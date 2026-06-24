@@ -11,6 +11,7 @@
     <nav class="sidebar-nav">
         <a href="{{ "" | absLangURL }}" class="nav-item{{ if .IsHome }} active{{ end }}">home</a>
         <a href="{{ "posts/" | relURL }}" class="nav-item{{ if (eq .Section "posts") }} active{{ end }}">posts</a>
+        <a href="{{ "projects/" | relURL }}" class="nav-item{{ if (eq .RelPermalink "/projects/") }} active{{ end }}">projects</a>
     </nav>
 
     <div class="sidebar-divider"></div>

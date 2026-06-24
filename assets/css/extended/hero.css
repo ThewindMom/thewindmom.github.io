@@ -25,6 +25,8 @@
 .read-more,
 .essay-entry,
 .project-entry,
+.project-card,
+.projects-intro,
 .reading-entry,
 .view-all,
 .home-footer {
@@ -48,6 +50,16 @@
 .reading-entry:nth-child(3) { animation-delay: 0.20s; }
 .view-all             { animation-delay: 0.28s; }
 .home-footer          { animation-delay: 0.40s; }
+.projects-intro       { animation-delay: 0s; }
+.project-card:nth-child(1) { animation-delay: 0.08s; }
+.project-card:nth-child(2) { animation-delay: 0.14s; }
+.project-card:nth-child(3) { animation-delay: 0.20s; }
+.project-card:nth-child(4) { animation-delay: 0.26s; }
+.project-card:nth-child(5) { animation-delay: 0.32s; }
+.project-card:nth-child(6) { animation-delay: 0.38s; }
+.project-card:nth-child(7) { animation-delay: 0.44s; }
+.project-card:nth-child(8) { animation-delay: 0.50s; }
+.project-card:nth-child(n+9) { animation-delay: 0.56s; }
 
 /* ===== Grain Texture Overlay ===== */
 .home-layout::after {
@@ -389,6 +401,8 @@
 }
 .project-entry {
     display: flex;
+    text-decoration: none;
+    color: inherit;
     align-items: center;
     justify-content: space-between;
     padding: 14px 0;
@@ -672,6 +686,8 @@ body.menu-open {
     .read-more,
     .essay-entry,
     .project-entry,
+    .project-card,
+    .projects-intro,
     .reading-entry,
     .view-all,
     .home-footer {
