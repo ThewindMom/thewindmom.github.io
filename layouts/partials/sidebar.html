@@ -1,0 +1,127 @@
+{{- /* Left sidebar: brand, nav, status, copyright — shared across all pages */ -}}
+<button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+</button>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<aside class="home-sidebar" id="home-sidebar">
+    <a href="{{ "" | absLangURL }}" class="sidebar-brand" id="sidebar-brand"><span class="poetry">- thewind</span></a>
+
+    <nav class="sidebar-nav">
+        <a href="{{ "" | absLangURL }}" class="nav-item{{ if .IsHome }} active{{ end }}">home</a>
+        <a href="{{ "posts/" | relURL }}" class="nav-item{{ if (eq .Section "posts") }} active{{ end }}">posts</a>
+    </nav>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-status">
+        <div class="status-item">
+            <svg class="status-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>darmstadt, de</span>
+        </div>
+        <div class="status-item">
+            <svg class="status-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="sidebar-time">--:--</span>
+        </div>
+        <div class="status-item">
+            <svg class="status-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.5 19a4.5 4.5 0 1 0-4.5-4.5h0a4.5 4.5 0 0 0-9 0h0a4.5 4.5 0 0 0 4.5 4.5h9z"/></svg>
+            <span>overcast, 14°C</span>
+        </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-reading">
+        <p class="sidebar-label">currently reading</p>
+        <p class="reading-book-title">The Creative Act</p>
+        <p class="reading-book-subtitle">A Way of Being</p>
+        <p class="reading-book-author">Rick Rubin</p>
+        <div class="reading-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 37%"></div>
+            </div>
+            <span class="progress-text">37%</span>
+        </div>
+    </div>
+
+    <div class="sidebar-footer">
+        <p class="sidebar-copyright">© {{ now.Format "2006" }} thewind</p>
+        <span class="poetry sidebar-tagline-poetry">thoughts on building,<br>learning, and living<br>with intention.</span>
+    </div>
+</aside>
+<script>
+(function() {
+    // Time update
+    function updateTime() {
+        var el = document.getElementById('sidebar-time');
+        if (!el) return;
+        var fmt = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Europe/Berlin',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        });
+        el.textContent = fmt.format(new Date()).toLowerCase();
+    }
+    updateTime();
+    setInterval(updateTime, 30000);
+
+    // Burger menu toggle
+    var toggle = document.getElementById('sidebar-toggle');
+    var sidebar = document.getElementById('home-sidebar');
+    var overlay = document.getElementById('sidebar-overlay');
+    var body = document.body;
+
+    var savedScrollY = 0;
+    function openSidebar() {
+        savedScrollY = window.scrollY;
+        sidebar.classList.add('sidebar-open');
+        overlay.classList.add('overlay-visible');
+        toggle.classList.add('toggle-active');
+        toggle.setAttribute('aria-expanded', 'true');
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+        body.style.top = '-' + savedScrollY + 'px';
+        body.classList.add('menu-open');
+    }
+    function closeSidebar() {
+        sidebar.classList.remove('sidebar-open');
+        overlay.classList.remove('overlay-visible');
+        toggle.classList.remove('toggle-active');
+        toggle.setAttribute('aria-expanded', 'false');
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
+        body.style.top = '';
+        body.classList.remove('menu-open');
+        window.scrollTo(0, savedScrollY);
+    }
+
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            if (sidebar.classList.contains('sidebar-open')) closeSidebar();
+            else openSidebar();
+        });
+    }
+    if (overlay) overlay.addEventListener('click', closeSidebar);
+    // Prevent touch scroll on overlay (mobile body scroll lock)
+    if (overlay) {
+        overlay.addEventListener('touchmove', function(e) { e.preventDefault(); }, { passive: false });
+    }
+    if (sidebar) {
+        sidebar.querySelectorAll('.nav-item').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 1024) closeSidebar();
+            });
+        });
+    }
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSidebar();
+    });
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 1024) closeSidebar();
+    });
+})();
+</script>

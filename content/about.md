@@ -2,7 +2,7 @@
 title: "About"
 layout: "single"
 url: "/about/"
-summary: "About me"
+showtoc: false
 ---
 
 Hey, I'm thewindmom.

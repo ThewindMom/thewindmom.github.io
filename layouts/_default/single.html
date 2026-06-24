@@ -1,0 +1,51 @@
+{{- define "main" }}
+<div class="home-content">
+<div class="post-page">
+    <article class="post-article">
+        <header class="post-article-header">
+            <a href="{{ "posts/" | relURL }}" class="back-link">← back to posts</a>
+            <div class="post-article-meta">
+                <span>{{ .Date.Format "Jan 02, 2006" }}</span>
+                <span class="meta-dot">·</span>
+                <span>{{ .ReadingTime }} min read</span>
+            </div>
+            <h1 class="post-article-title">{{ .Title }}</h1>
+            {{- if .Description }}
+            <p class="post-article-desc">{{ .Description }}</p>
+            {{- end }}
+        </header>
+
+        {{- if .Content }}
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+        {{- end }}
+
+        <footer class="post-article-footer">
+            {{- if (.Param "ShowPostNavLinks") }}
+            {{- partial "post_nav_links.html" . }}
+            {{- end }}
+        </footer>
+</div>
+</div>
+
+
+<script>
+document.querySelectorAll('pre > code').forEach(function(codeblock) {
+    var container = codeblock.parentNode.parentNode;
+    var copybutton = document.createElement('button');
+    copybutton.classList.add('copy-code');
+    copybutton.innerHTML = 'copy';
+    copybutton.addEventListener('click', function() {
+        navigator.clipboard.writeText(codeblock.textContent);
+        copybutton.innerHTML = 'copied!';
+        setTimeout(function() { copybutton.innerHTML = 'copy'; }, 2000);
+    });
+    if (container.classList.contains('highlight')) {
+        container.appendChild(copybutton);
+    } else {
+        codeblock.parentNode.appendChild(copybutton);
+    }
+});
+</script>
+{{- end }}{{/* end main */}}

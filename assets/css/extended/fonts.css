@@ -1,0 +1,56 @@
+/* ===== Geist Font System ===== */
+
+/* Geist Sans + Geist Mono via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600&display=swap');
+
+/* Geist Pixel — local woff2, not on Google Fonts */
+@font-face {
+    font-family: 'Geist Pixel';
+    src: url('/fonts/GeistPixel-Square.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Geist Pixel Grid';
+    src: url('/fonts/GeistPixel-Grid.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Geist Pixel Circle';
+    src: url('/fonts/GeistPixel-Circle.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Geist Pixel Triangle';
+    src: url('/fonts/GeistPixel-Triangle.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Geist Pixel Line';
+    src: url('/fonts/GeistPixel-Line.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Biro Script';
+    src: url('/fonts/biro_script_standard_us.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Poetry class — handwritten script style from jzhao.xyz */
+.poetry {
+    font-family: 'Biro Script', cursive;
+    font-size: 1.2em;
+    white-space: pre-wrap;
+    display: block;
+}

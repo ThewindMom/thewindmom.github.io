@@ -1,12 +1,87 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url={{ "posts/" | relURL }}">
-    <link rel="canonical" href="{{ "posts/" | relURL }}">
-    <title>Redirecting…</title>
-  </head>
-  <body>
-    <p>Redirecting to <a href="{{ "posts/" | relURL }}">Posts</a>…</p>
-  </body>
-</html>
+{{ define "main" }}
+{{- partial "hero.html" . -}}
+
+<div class="home-content">
+    {{- /* Featured + Recent Essays + Projects + Reading Notes in one row */ -}}
+    <div class="home-row home-row-four">
+        <section class="home-featured">
+            <h3 class="section-label">Featured</h3>
+            {{- with index (where site.RegularPages "Type" "posts") 0 }}
+            <a href="{{ .Permalink }}" class="featured-link">
+                <h2 class="featured-title">{{ .Title }}</h2>
+            </a>
+            <p class="featured-summary">{{ .Description | default .Summary | truncate 120 }}</p>
+            <a href="{{ .Permalink }}" class="read-more">Read the essay →</a>
+            {{- end }}
+        </section>
+
+        <section class="home-recent">
+            <h3 class="section-label">Recent Essays</h3>
+            <div class="essay-list">
+                {{- range first 5 (after 1 (where site.RegularPages "Type" "posts")) }}
+                <a href="{{ .Permalink }}" class="essay-entry">
+                    <span class="essay-title">{{ .Title }}</span>
+                    <span class="essay-date">{{ .Date.Format "Jan 02" }}</span>
+                </a>
+                {{- end }}
+            </div>
+        </section>
+
+        <section class="home-projects">
+            <h3 class="section-label">Projects</h3>
+            <div class="project-list">
+                <div class="project-entry">
+                    <div class="project-info">
+                        <span class="project-name">windlog</span>
+                        <span class="project-desc">A quiet space for notes that outlive the moment.</span>
+                    </div>
+                    <span class="arrow">→</span>
+                </div>
+                <div class="project-entry">
+                    <div class="project-info">
+                        <span class="project-name">draftline</span>
+                        <span class="project-desc">Distraction-free writing, built for long thoughts.</span>
+                    </div>
+                    <span class="arrow">→</span>
+                </div>
+                <div class="project-entry">
+                    <div class="project-info">
+                        <span class="project-name">currents</span>
+                        <span class="project-desc">A dashboard for habits, patterns, and time.</span>
+                    </div>
+                    <span class="arrow">→</span>
+                </div>
+            </div>
+            <a href="#" class="view-all">View all projects →</a>
+        </section>
+
+        <section class="home-reading">
+            <h3 class="section-label">Reading Notes</h3>
+            <div class="reading-list">
+                <div class="reading-entry">
+                    <span class="reading-bullet" aria-hidden="true"></span>
+                    <div class="reading-content">
+                        <p class="reading-quote">"The desire to create is one of the deepest yearnings of the human soul."</p>
+                        <p class="reading-cite">— The Creative Act <span class="reading-page">p. 48</span></p>
+                    </div>
+                </div>
+                <div class="reading-entry">
+                    <span class="reading-bullet" aria-hidden="true"></span>
+                    <div class="reading-content">
+                        <p class="reading-quote">"You can't steer a parked car."</p>
+                        <p class="reading-cite">— Atomic Habits <span class="reading-page">p. 91</span></p>
+                    </div>
+                </div>
+                <div class="reading-entry">
+                    <span class="reading-bullet" aria-hidden="true"></span>
+                    <div class="reading-content">
+                        <p class="reading-quote">"Clarity is the answer to power."</p>
+                        <p class="reading-cite">— Clear Thinking <span class="reading-page">p. 112</span></p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="view-all">More reading notes →</a>
+        </section>
+    </div>
+</div>
+{{ end }}

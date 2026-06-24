@@ -1,0 +1,35 @@
+{{- define "main" }}
+<div class="home-content">
+    <div class="posts-section">
+        <h3 class="section-label">All Posts <span class="posts-count-inline">{{ len .Pages }}</span></h3>
+        <div class="essay-list">
+            {{- range .Paginator.Pages }}
+            <a href="{{ .Permalink }}" class="essay-entry">
+                <div class="essay-entry-main">
+                    <span class="essay-title">{{ .Title }}</span>
+                    <span class="essay-summary">{{ .Description | default .Summary | truncate 120 }}</span>
+                    <span class="essay-time">{{ .Date.Format "Jan 02, 2006" }} · {{ .ReadingTime }} min read</span>
+                </div>
+                <span class="essay-date">→</span>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+
+    {{- if gt .Paginator.TotalPages 1 }}
+    <nav class="posts-pagination">
+        {{- if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="page-prev">← Newer</a>
+        {{- else }}
+        <span class="page-prev disabled">← Newer</span>
+        {{- end }}
+        <span class="page-info">{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}</span>
+        {{- if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="page-next">Older →</a>
+        {{- else }}
+        <span class="page-next disabled">Older →</span>
+        {{- end }}
+    </nav>
+    {{- end }}
+</div>
+{{- end }}{{- /* end main */ -}}
