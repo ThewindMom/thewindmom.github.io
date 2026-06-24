@@ -25,6 +25,11 @@ I wanted to be model-agnostic. So I switched back to **Codex** as my primary sub
 
 The upside: **Codex burned through usage far slower than Claude Code ever did.** With Claude Code Max, hitting the weekly limit was trivially easy: a couple of long sessions and you were done. Codex was more forgiving, which meant I could actually work without constantly watching a quota meter.
 
+<figure>
+<img src="/images/260622_tibo_reset.png" alt="Saint Tibo: Giver of Tokens, Resetter of Limits" />
+<figcaption>Saint Tibo, patron saint of Codex rate limits. <a href="https://x.com/sama/status/2056804900017947046">If this tweet gets 1 like, Tibo will reset Codex rate limits.</a></figcaption>
+</figure>
+
 The downside: Codex alone wasn't enough for everything. Which is where the last five months of chaos began, and only recently started to settle.
 
 I'm not going to pretend this was a clean progression. It was a mess. Here's the actual path:
@@ -38,11 +43,6 @@ I'm not going to pretend this was a clean progression. It was a mess. Here's the
 4. **Conductor**: I dropped it. It only supported Claude Code and Codex, and I was already moving toward harnesses that could swap models freely. No point in a tool that locks you back into two providers.
 
  For the interface layer (the thing I actually stare at), I bounced through **emdash**, **cmux**, **Superset**, **Supacode**, and **Kaku**. They're all trying to solve the same problem: how do you manage multiple agent sessions without losing your mind? They're all decent. None of them stuck, except perhaps Kaku, a terminal by Tw93: Tw93 always delivers aesthetic projects with clean features and that Asian minimalism I love.
-
-<figure>
-<img src="/images/260622_tibo_reset.png" alt="Saint Tibo: Giver of Tokens, Resetter of Limits" />
-<figcaption>Saint Tibo, patron saint of Codex rate limits. <a href="https://x.com/sama/status/2056804900017947046">If this tweet gets 1 like, Tibo will reset Codex rate limits.</a></figcaption>
-</figure>
 
 ### Where I Landed: Herdr
 

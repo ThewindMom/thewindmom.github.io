@@ -49,15 +49,12 @@
         var octx = off.getContext('2d');
 
         fontSize = Math.min(W * 0.14, 120);
-        // On mobile, left-align text to match content padding
-        var isMobile = W < 640;
-        var padLeft = isMobile ? 20 : W * 0.08;
+        // Center the title text on all viewports
         octx.font = '600 ' + fontSize + 'px "Geist", sans-serif';
-        octx.textAlign = isMobile ? 'left' : 'center';
+        octx.textAlign = 'center';
         octx.textBaseline = 'middle';
         octx.fillStyle = '#fff';
-        var textX = isMobile ? padLeft : W / 2;
-        octx.fillText('thewind', textX, H * 0.40);
+        octx.fillText('thewind', W / 2, H * 0.40);
 
         var imgData = octx.getImageData(0, 0, W, H);
         var data = imgData.data;

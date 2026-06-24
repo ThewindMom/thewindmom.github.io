@@ -667,6 +667,9 @@ body.menu-open {
         height: 35vh;
         min-height: 240px;
     }
+    .particle-hero__title {
+        text-align: center;
+    }
     .home-row {
         grid-template-columns: 1fr;
         gap: 40px;
