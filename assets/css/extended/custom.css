@@ -354,6 +354,72 @@ body {
     margin: 1.5em 0;
     max-width: 100%;
 }
+.post-content figure {
+    margin: 2em 0;
+    text-align: center;
+}
+.post-content figure img {
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+.post-content figure > figcaption {
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: #8a8a8a;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-weight: normal;
+}
+.post-content figure > figcaption > p {
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    color: #8a8a8a;
+    font-weight: normal;
+    margin: 0;
+}
+.post-content table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+}
+.post-content table:not(.highlighttable, .highlight table, .gist .highlight) td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #1a1a1a;
+    color: #d4d4d4;
+    line-height: 1.5;
+    vertical-align: top;
+}
+.post-content table th {
+    text-align: left;
+    padding: 10px 14px;
+    font-family: 'Geist Pixel', 'Geist Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8a8a8a;
+    border-bottom: 1px solid #2a2a2a;
+    white-space: nowrap;
+}
+.post-content table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #1a1a1a;
+    color: #d4d4d4;
+    line-height: 1.5;
+    vertical-align: top;
+}
+.post-content table tr:last-child td {
+    border-bottom: none;
+}
+.post-content table thead {
+    background: rgba(255, 255, 255, 0.02);
+}
 .post-content hr {
     border: none;
     border-top: 1px solid #1a1a1a;
