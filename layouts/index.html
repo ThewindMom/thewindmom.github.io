@@ -30,27 +30,15 @@
         <section class="home-projects">
             <h3 class="section-label">Projects</h3>
             <div class="project-list">
-                <a href="https://github.com/ThewindMom/151-trading-strategies" class="project-entry" target="_blank" rel="noopener">
+                {{- range first 3 site.Data.projects.list }}
+                <a href="{{ .url }}" class="project-entry" target="_blank" rel="noopener">
                     <div class="project-info">
-                        <span class="project-name">151-trading-strategies</span>
-                        <span class="project-desc">Sixty-eight trading strategies, distilled into a clean API.</span>
+                        <span class="project-name">{{ .name }}</span>
+                        <span class="project-desc">{{ .description }}</span>
                     </div>
                     <span class="arrow">→</span>
                 </a>
-                <a href="https://github.com/ThewindMom/pi-doom-loop-detector" class="project-entry" target="_blank" rel="noopener">
-                    <div class="project-info">
-                        <span class="project-name">pi-doom-loop-detector</span>
-                        <span class="project-desc">Catching AI agents stuck in recursive loops.</span>
-                    </div>
-                    <span class="arrow">→</span>
-                </a>
-                <a href="https://github.com/ThewindMom/compound-engineering-pi" class="project-entry" target="_blank" rel="noopener">
-                    <div class="project-info">
-                        <span class="project-name">compound-engineering-pi</span>
-                        <span class="project-desc">Compound engineering patterns for AI agents.</span>
-                    </div>
-                    <span class="arrow">→</span>
-                </a>
+                {{- end }}
             </div>
             <a href="{{ "projects/" | relURL }}" class="view-all">View all projects →</a>
         </section>

@@ -36,6 +36,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
+      - name: Fetch latest projects from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/fetch-projects.sh
+
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
